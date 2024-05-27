@@ -1,0 +1,6 @@
+Thursday, 10 NOV 22
+0649 hrs
+
+The last five minutes were spent fixing the toggle issue that was encountered yesterday.  It made more sense to tie the switch logic to a local boolean variable rather than the state of it's animation.  So what now?  I have to come up with a lot more content today.  Tomorrow I want to focus on polish and publication, so I can deliver it in time for the B-Day on Saturday.
+
+I have to leave in about 10 minutes, cc call for 4 hours followed by a 3 hour virtual class for an additional duty when I get home.  Then the rest of the day is clear.  I will finish this game by tonight.  The goal is to provide 15 minutes of gameplay with a happy birthday message at the end.  

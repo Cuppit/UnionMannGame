@@ -1,0 +1,17 @@
+16:00
+
+We need puzzles.
+
+puzzle 2: flip all the switches to get the door open
+
+
+puzzle 3: figure out the correct combination to get the door to open
+
+
+puzzle 4: navigate the maze?
+
+-------
+16:52
+
+Puzzle 2 is tricky to program due to the lack of planning.  have to come 
+back later

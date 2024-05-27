@@ -1,0 +1,11 @@
+0647 hrs
+
+I spent the past 45 minutes playing with my work, and I got some basic functionality where a player can flip a switch to trigger activity in an object with which it's linked to.  Now to design some puzzles.
+
+What we've created so far is basically "puzzle 1".  So let's go ahead and make puzzle 2.
+
+PUZZLE 2: FLIP ALL THE SWITCHES TO OPEN THE DOOR
+
+
+---0657 hrs---
+It will be hard to keep everything in one scene, so I will make individual puzzle rooms contained in nodes in the main script.  Out of time at the moment, have to be somewhere by 8 this morning.  Will continue around end of day

@@ -1,0 +1,27 @@
+1258 hrs
+
+I've spent approx the past 2 hours working on implementing top-down shooter functionality into the game, and it turns out it's much more complicated than I anticipated.
+
+At first I thought I had a handle on a simple hierarchy (add gun to player, have gun spawn bullet on funcion call "fire" from player, destroy bullet as soon as it detects a collision but not before handling any collision functionality, etc.) But it turns out it's a bit tricky handling position/direction, and it's especially 
+important to make the bullet a child of the main scene, NOT of the player or the gun (so that movements of the
+player/gun don't affect movements of the bullet mid-flight)
+
+
+------
+
+
+After a lot of research (thanks to YouTube channel jmbiv for instructionals about godot top-down shooters: 
+https://www.youtube.com/watch?v=ggt05fCiH7M
+https://www.youtube.com/watch?v=9RP7Ujv0gdE
+)
+
+I eventually settled on a mish-mash of workarounds to roughly get the functionality I was looking for.  So now I will be going ahead and trying to finish a semblance of a game.
+
+-------
+1821 hrs
+
+I finally settled in again 2 hours ago.  I made a maze, now I have to set up a puzzle/solution/challenge.  Playing with SFX.  Need to concentrate to wrap this up.
+
+2047 hrs
+
+Some pretty fancy progress so far, implemented a basic ememy character (Ghost) that "blows up" when touching the player, causing damage.  The character also sustains hits from bullets.

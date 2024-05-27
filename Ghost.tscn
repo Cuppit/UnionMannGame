@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Ghost.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/confederate.png" type="Texture" id=2]
+[ext_resource path="res://Sounds/en_frank_impact_05.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/en_frank_vo_dash_03.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sounds/evil-laugh_98bpm_F#_minor.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sounds/wilhelmevil.wav" type="AudioStream" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.0907
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "disappear"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 0.241484 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Ghost" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Disappear" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite")
+anims/RESET = SubResource( 3 )
+anims/disappear = SubResource( 2 )
+
+[node name="EvilLaugh" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="EvilDrone" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 6 )
+volume_db = -26.267
+autoplay = true
+
+[connection signal="timeout" from="DeathTimer" to="." method="_on_DeathTimer_timeout"]
+[connection signal="finished" from="EvilDrone" to="." method="_on_EvilDrone_finished"]

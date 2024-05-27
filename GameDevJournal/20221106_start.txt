@@ -1,0 +1,17 @@
+GAME IDEA
+
+Explore the maze!  
+
+
+WHAT? 
+
+Solve the puzzles to get to the end of the maze!
+
+LET'S START WITH 3 BASIC PUZZLES TO START
+
+
+PUZZLE 1: FLIP THE SWITCH
+
+Situation: The player is in a room with a switch and a door.  The player needs to get through the door.
+
+Solution: The player flips the switch to open the door.

@@ -1,0 +1,283 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Switch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Hinge.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Main.gd" type="Script" id=6]
+[ext_resource path="res://Puzzle2.gd" type="Script" id=7]
+[ext_resource path="res://SwitchConditional.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Puzzle3.gd" type="Script" id=9]
+[ext_resource path="res://BulletManager.gd" type="Script" id=10]
+[ext_resource path="res://Maze.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Puzzle4.gd" type="Script" id=12]
+[ext_resource path="res://Ghost.tscn" type="PackedScene" id=13]
+[ext_resource path="res://StartMazeSequenceTrigger.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GhostSpawner.gd" type="Script" id=15]
+[ext_resource path="res://Sounds/en_ghast_teleport.wav" type="AudioStream" id=16]
+
+[node name="Main" type="Node"]
+script = ExtResource( 6 )
+
+[node name="BulletManager" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -6893, -3648 )
+
+[node name="Wall" parent="." instance=ExtResource( 2 )]
+position = Vector2( -7051, -3529 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6055, -3520 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6523, -3806 )
+rotation = 1.57894
+scale = Vector2( 0.741754, 15.8147 )
+
+[node name="Wall4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -6715, -3114 )
+scale = Vector2( -8.85787, 0.979348 )
+
+[node name="Switch" parent="." instance=ExtResource( 4 )]
+position = Vector2( -6057, -3225 )
+
+[node name="Hinge" parent="." instance=ExtResource( 5 )]
+position = Vector2( -6427, -3114 )
+
+[node name="Door" parent="." instance=ExtResource( 3 )]
+position = Vector2( -6243, -3115 )
+rotation = 3.13642
+scale = Vector2( 0.929263, 0.185741 )
+
+[node name="GhostSpawner" type="Node" parent="."]
+script = ExtResource( 15 )
+
+[node name="SpawnLocation1" type="Position2D" parent="GhostSpawner"]
+position = Vector2( -1381, -458 )
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="GhostSpawner/SpawnLocation1"]
+stream = ExtResource( 16 )
+
+[node name="SpawnLocation2" type="Position2D" parent="GhostSpawner"]
+position = Vector2( -9682, -552 )
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="GhostSpawner/SpawnLocation2"]
+stream = ExtResource( 16 )
+
+[node name="SpawnLocation3" type="Position2D" parent="GhostSpawner"]
+position = Vector2( -9628, 6083 )
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="GhostSpawner/SpawnLocation3"]
+stream = ExtResource( 16 )
+
+[node name="SpawnLocation4" type="Position2D" parent="GhostSpawner"]
+position = Vector2( -1352, 6340 )
+
+[node name="SpawnSound" type="AudioStreamPlayer2D" parent="GhostSpawner/SpawnLocation4"]
+stream = ExtResource( 16 )
+
+[node name="SpawnTimer" type="Timer" parent="GhostSpawner"]
+wait_time = 5.0
+
+[node name="Puzzle2" type="Node" parent="."]
+script = ExtResource( 7 )
+
+[node name="Wall" parent="Puzzle2" instance=ExtResource( 2 )]
+position = Vector2( -6655, -2869 )
+scale = Vector2( 6.27013, 6.19443 )
+
+[node name="Wall2" parent="Puzzle2" instance=ExtResource( 2 )]
+position = Vector2( -5837, -2860 )
+scale = Vector2( 6.27013, 6.19443 )
+
+[node name="Wall3" parent="Puzzle2" instance=ExtResource( 2 )]
+position = Vector2( -6764, -2206 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall4" parent="Puzzle2" instance=ExtResource( 2 )]
+position = Vector2( -5734, -2191 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall5" parent="Puzzle2" instance=ExtResource( 2 )]
+position = Vector2( -6631, -1753 )
+rotation = 1.57894
+scale = Vector2( 0.741754, 15.8147 )
+
+[node name="Switch" parent="Puzzle2" instance=ExtResource( 4 )]
+position = Vector2( -5742, -1913 )
+
+[node name="Hinge" parent="Puzzle2" instance=ExtResource( 5 )]
+position = Vector2( -6091, -1746 )
+
+[node name="Door" parent="Puzzle2" instance=ExtResource( 3 )]
+position = Vector2( -5906, -1747 )
+rotation = 3.13642
+scale = Vector2( 0.929263, 0.185741 )
+
+[node name="Puzzle3" type="Node" parent="."]
+script = ExtResource( 9 )
+
+[node name="Wall" parent="Puzzle3" instance=ExtResource( 2 )]
+position = Vector2( -6319, -1511 )
+scale = Vector2( 6.27013, 6.19443 )
+
+[node name="Wall2" parent="Puzzle3" instance=ExtResource( 2 )]
+position = Vector2( -5493, -1504 )
+scale = Vector2( 6.27013, 6.19443 )
+
+[node name="Wall3" parent="Puzzle3" instance=ExtResource( 2 )]
+position = Vector2( -6428, -848 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall4" parent="Puzzle3" instance=ExtResource( 2 )]
+position = Vector2( -5398, -833 )
+scale = Vector2( 0.851051, 13.5387 )
+
+[node name="Wall5" parent="Puzzle3" instance=ExtResource( 2 )]
+position = Vector2( -6295, -395 )
+rotation = 1.57894
+scale = Vector2( 0.741754, 15.8147 )
+
+[node name="Switch" parent="Puzzle3" instance=ExtResource( 4 )]
+position = Vector2( -5094, -776 )
+
+[node name="Switch2" parent="Puzzle3" instance=ExtResource( 4 )]
+position = Vector2( -5398, -1196 )
+
+[node name="Switch3" parent="Puzzle3" instance=ExtResource( 4 )]
+position = Vector2( -5400, -992 )
+
+[node name="Switch4" parent="Puzzle3" instance=ExtResource( 4 )]
+position = Vector2( -5401, -781 )
+
+[node name="Switch5" parent="Puzzle3" instance=ExtResource( 4 )]
+position = Vector2( -5399, -564 )
+
+[node name="SwitchConditional" parent="Puzzle3" instance=ExtResource( 8 )]
+
+[node name="Hinge" parent="Puzzle3" instance=ExtResource( 5 )]
+position = Vector2( -5755, -388 )
+
+[node name="Door" parent="Puzzle3" instance=ExtResource( 3 )]
+position = Vector2( -5570, -389 )
+rotation = 3.14188
+scale = Vector2( 0.929263, 0.185741 )
+
+[node name="Puzzle4" type="Node" parent="."]
+script = ExtResource( 12 )
+
+[node name="StartMazeSequenceTrigger" parent="Puzzle4" instance=ExtResource( 14 )]
+position = Vector2( -6052, -226 )
+
+[node name="Maze" parent="Puzzle4" instance=ExtResource( 11 )]
+position = Vector2( -5476, 2873 )
+scale = Vector2( 9.77002, 11.7728 )
+
+[node name="Switch" parent="Puzzle4" instance=ExtResource( 4 )]
+position = Vector2( -8825, 267 )
+
+[node name="Switch2" parent="Puzzle4" instance=ExtResource( 4 )]
+position = Vector2( -1917, 305 )
+
+[node name="Switch3" parent="Puzzle4" instance=ExtResource( 4 )]
+position = Vector2( -1970, 5508 )
+
+[node name="Switch4" parent="Puzzle4" instance=ExtResource( 4 )]
+position = Vector2( -7173, 4384 )
+
+[node name="Switch5" parent="Puzzle4" instance=ExtResource( 4 )]
+position = Vector2( -4520, 6071 )
+
+[node name="SwitchConditional" parent="Puzzle4" instance=ExtResource( 8 )]
+
+[node name="Hinge" parent="Puzzle4" instance=ExtResource( 5 )]
+position = Vector2( -5304, 5938 )
+
+[node name="Door" parent="Puzzle4" instance=ExtResource( 3 )]
+position = Vector2( -4942, 5940 )
+rotation = 3.13642
+scale = Vector2( 1.8125, 0.224032 )
+
+[node name="ExitSign" type="Label" parent="Puzzle4"]
+margin_left = -5203.0
+margin_top = 6043.0
+margin_right = -4582.0
+margin_bottom = 6419.0
+rect_scale = Vector2( 3, 3 )
+text = "FLIP ON THE 4
+SWITCHES IN THE MAZE
+TO EXIT"
+
+[node name="Ghost" parent="." instance=ExtResource( 13 )]
+position = Vector2( -6237, -2325 )
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = -6966.0
+margin_top = -3582.0
+margin_right = -6746.0
+margin_bottom = -3446.0
+rect_scale = Vector2( 2, 2 )
+text = "TO MOVE:
+Use the  
+\"W\", \"A\", \"S\", \"D\" keys"
+
+[node name="Instructions2" type="Label" parent="."]
+margin_left = -6429.0
+margin_top = -2251.0
+margin_right = -6044.0
+margin_bottom = -2115.0
+rect_scale = Vector2( 1.5, 1.5 )
+text = "Press \"Right-Click\" to draw/holster the \"Confederate Capper\"
+
+Then \"left-click\" to \"cap\" a Confederate Ghost..."
+
+[node name="Instructions3" type="Label" parent="."]
+margin_left = -6049.0
+margin_top = -1642.0
+margin_right = -5664.0
+margin_bottom = -1259.0
+rect_scale = Vector2( 2, 2 )
+text = "Do you like puzzles?"
+
+[node name="Puzzle5" type="Node" parent="."]
+
+[node name="Wall" parent="Puzzle5" instance=ExtResource( 2 )]
+position = Vector2( -6475, 12600 )
+scale = Vector2( 26.9908, -197.633 )
+
+[node name="Wall2" parent="Puzzle5" instance=ExtResource( 2 )]
+position = Vector2( -3474, 13201 )
+scale = Vector2( -32.1883, 213.513 )
+
+[node name="Wall3" parent="Puzzle5" instance=ExtResource( 2 )]
+position = Vector2( -4827, 26605 )
+rotation = -3.14159
+scale = Vector2( 32.1883, -213.513 )
+
+[node name="Instructions3" type="Label" parent="Puzzle5"]
+margin_left = -5382.0
+margin_top = 18138.0
+margin_right = -5223.0
+margin_bottom = 18326.0
+rect_scale = Vector2( 6, 6 )
+text = "NO ESCAPE...
+BUT CONGRATS
+ON THE BIG
+31 YEARS...
+OF SURVIVALLL
+
+GOOD LUCK 
+SURVIVING
+81 MOOORE"
+
+[node name="EndMazeSequenceTrigger" parent="Puzzle5" instance=ExtResource( 14 )]
+position = Vector2( -5537, 16994 )
+scale = Vector2( 1.26526, 10.173 )
+mode_ending = true
+
+[connection signal="timeout" from="GhostSpawner/SpawnTimer" to="GhostSpawner" method="_on_SpawnTimer_timeout"]

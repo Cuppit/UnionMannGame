@@ -1,0 +1,33 @@
+0615 HRS
+
+The problem today is how to handle the "interact" function.
+
+Original idea: once the player comes within a certain distance
+of an "interactable" object, a label pops up over it, indicating 
+it can be interacted with.  Then, when the player presses 'e', 
+the object will be interacted with.
+
+BEST GODOT-STYLE SOLUTION: Create an Area2D around interactable 
+object, so when player overlaps with it the label will pop up,
+and interactions will be enabled.
+
+--- ---
+
+UPDATE 0715: I've come up with a weird solution to enabling "interactors"
+to interact with one another.  Once an "interacting" character (e.g.
+a scene whose script contains the "interact()" function) enters the 
+switch's "interact radius", the interactor receives a reference to 
+the switch in a local variable.  Then, once the interactor uses it's
+local "interact()" function, the "run_interaction()" function of 
+the switch will be triggered.  I don't know if this is a good solution,
+or if there's a much better solution to my approach.  I need to 
+get some feedback from more experienced makers.
+
+
+--- --- 
+UPDATE, 0806: Fair amount of progress made, interaction hierarchy
+has more or less been established.  Connections between switches and
+triggered objects are managed by the "Main" scene script at initialization.
+After that, specifics are dependent on the objects themselves, their
+relative positions, etc.  Wish I had more time but it's time to go to
+work.  
